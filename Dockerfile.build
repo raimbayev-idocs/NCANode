@@ -1,18 +1,10 @@
-#
-# NCANode Dockerfile for build
-#
-# The NCANode Dockerfile for building from source code
-# ----------------------------------------------------
-# Build image with command: docker build -t malikzh/ncanode .
-# Run container with command: docker run -ti -p 14579:14579 malikzh/ncanode
-# ----------------------------------------------------
-# Author: @exe-dealer ( https://github.com/exe-dealer )
-# Contributor: @malikzh ( https://github.com/malikzh/NCANode )
-# License: MIT
-#
-
-FROM maven:3.6.0-jdk-11-slim
+FROM maven:3.8.5-jdk-11-slim
 WORKDIR /usr/local/src/NCANode
+
+RUN apt-get update && apt-get install -y gnupg2
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138 && \
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9
+
 RUN apt update && apt install -y crudini
 COPY src src/
 COPY lib lib/

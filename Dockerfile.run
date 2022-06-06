@@ -1,15 +1,3 @@
-#
-# NCANode Dockerfile for run NCANode
-#
-# The NCANode Dockerfile for run ncanode app in container
-# ----------------------------------------------------
-# Build image with command: docker build -t malikzh/ncanode .
-# Run container with command: docker run -dti -p 14579:14579 malikzh/ncanode
-# ----------------------------------------------------
-# Author: @malikzh ( https://github.com/malikzh )
-# License: MIT
-#
-
 FROM ubuntu:16.04
 
 # Installing dependencies

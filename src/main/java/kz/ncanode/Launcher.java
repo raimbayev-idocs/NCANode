@@ -24,11 +24,7 @@ public class Launcher
         Runtime.getRuntime().addShutdownHook(new Thread(Launcher::shutdown));
 
         // Intro
-        System.out.print(Helper.awesomeBanner());
         System.out.printf("NCANode v%s\n", InfoServiceProvider.VERSION);
-        System.out.printf("Official project page: %s\n", InfoServiceProvider.PROJECT_PAGE);
-        System.out.printf("Please star ★ github repo: %s\n", InfoServiceProvider.GITHUB_PAGE);
-        System.out.printf("Copyright (c) 2018-%d Malik Zharykov.\n", Calendar.getInstance().get(Calendar.YEAR));
         System.out.println("Memory info:");
         System.out.println(Helper.getMemoryInfo().toJSONString());
         System.out.println("------------------------------------");
